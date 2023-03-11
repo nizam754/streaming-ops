@@ -35,7 +35,7 @@ Goals
 
 ### User Flow
 
-![User Flow!](./userflow.jpg)
+![User Flow!](./userflow.png)
 
 ## Flow of execution
 
