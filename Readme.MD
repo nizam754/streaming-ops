@@ -39,22 +39,14 @@ Goals
 
 ## Flow of execution
 
-1. Login to AWS Account
-2. Create key pair
-3. Create Security Group
-   - Jenkins, Nexus & Sonarqube
-4. Create Ec2 Instances with userdata
-   - Jenkins, Nexus & Sonarqube
-5. Post installation
-   - Jenkins setup & plugins
-   - Nexus setup & repository setup
-   - Sonarqube login test
-6. Git
-   - Create a github repository & migrate code
-   - Integrate github repo with VsCode and test it
-   - [Git repository](https://github.com/nizam754/vprociproject)
-7. Build job with Nexus integration
-8. Github webhook
-9. Sonarqube server integration stage
-10. Nexus Artifact upload stage
-11. Slack Notification
+1. Login to Brilliant Cloud
+2. Create VPC
+3. Create Subnet
+4. Create Key pair
+5. Create security group for frontend-sg, backend-sg, db-sg
+6. Create 3 instances
+7. Post installation
+   - Docker, nagios, git
+8. Build job with CircleCI
+9. Email Notification
+
