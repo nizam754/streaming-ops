@@ -32,7 +32,7 @@ from superset.views.base_api import BaseSupersetApi
 config = app.config
 ADVANCED_DATA_TYPES = config["ADVANCED_DATA_TYPES"]
 
-
+print("hello")
 class AdvancedDataTypeRestApi(BaseSupersetApi):
     """
     Advanced Data Type Rest API
