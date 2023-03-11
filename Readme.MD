@@ -31,11 +31,11 @@ Goals
 
 ### Workflow
 
-![Workflow!](images/workflow.png)
+![Workflow!](./workflow.png)
 
 ### User Flow
 
-![User Flow!](images/userflow.jpg)
+![User Flow!](./userflow.jpg)
 
 ## Flow of execution
 
