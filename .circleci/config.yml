@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    working_directory: /streaming-ops
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache py-pip=9.0.0-r1
+            pip install docker-compose==1.15.0
+
+      - deploy:
+          name: Push application Docker image
+          command: |
+            docker login -e $DOCKER_HUB_EMAIL -u $DOCKER_HUB_USER_ID -p $DOCKER_HUB_PWD
+            docker tag streaming-ops_streaming-ops $DOCKER_HUB_USER_ID/streaming-ops:$CIRCLE_SHA1
+            docker tag streaming-ops_streaming-ops $DOCKER_HUB_USER_ID/streaming-ops:latest
+            docker push $DOCKER_HUB_USER_ID/streaming-ops:$CIRCLE_SHA1
+            docker push $DOCKER_HUB_USER_ID/streaming-ops:latest
